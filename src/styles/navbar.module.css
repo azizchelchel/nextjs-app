@@ -1,0 +1,7 @@
+
+.bg{
+    display: flex;
+    justify-content:space-evenly;
+    font-size: 20px;
+    background-color:red;
+}
