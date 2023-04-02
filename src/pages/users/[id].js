@@ -16,7 +16,35 @@ export default function Dynamic(props) {
     )
 }
 
-export const getServerSideProps = async (context) => {
+
+// export async function getStaticPaths() {
+//   const users =await fetch("https://jsonplaceholder.typicode.com/users?_limit=5");
+//   const jsonUsers =  await users.json();
+//   const  paths = jsonUsers.map(
+//     e  => (
+//       {
+//         params:{id: `${e.id}`}
+//       }
+//     )
+//   )
+//   return {
+//     paths: paths,
+//     fallback: false
+//   }
+// }
+
+
+// export const getStaticProps = async (context) => {
+//     const users = await fetch(`https://jsonplaceholder.typicode.com/users/${context.params.id}`);
+//     const data = await users.json();
+//     return {
+//       props:{
+//         users: data
+//       }
+//     }
+//   }
+    
+  export const getServerSideProps = async (context) => {
     const users = await fetch(`https://jsonplaceholder.typicode.com/users/${context.params.id}`);
     const data = await users.json();
     return {
@@ -25,4 +53,3 @@ export const getServerSideProps = async (context) => {
       }
     }
   }
-    

@@ -10,13 +10,15 @@ import Link from "next/link";
             <title>users page</title>
           </Head>
          
-          {props.posts.map(
-            (e) => 
-              <div key={e.id}>
-                <Link key={e.id} href={`/users/${e.id}`}>{e.title}</Link>
-              </div>
-            
-          )}
+          {
+            props.posts.map(
+              e => 
+                <div key={e.id}>
+                  <Link key={e.id} href={`/users/${e.id}`}>{e.title}</Link>
+                </div>
+              
+            )
+          }
 
           <a href="../about">go to about page</a>
         
